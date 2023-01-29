@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  height: 105vh;
+  font-family: "poppins";
+  color: aliceblue;
+  background-color: transparent;
+}
+
+.outer-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 17px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 60px;
+  margin: 30px;
+  color: rgb(117, 113, 113); 
+}
+
+.signup-text {
+  margin-top: 10%;
+}
+
+.contain { 
+  display: flex;
+  height: 100%;
+}
+
+.inner-div {  
+  border-radius: 24px;
+  height: 580px;
+  width: 500px;
+  color: #fff;
+}
+
+.main {
+  position: absolute;
+  background-color: #01081f;;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  margin-top: 7%;
+  border-radius: 60px;
+  box-shadow: 4px 4px 12px 2px rgb(0, 0, 0);
+}
+.it1 {
+  background: #9a829b ;
+  /* flex-basis: 100px; */
+  height: 100%;
+  width: 50%;
+}
+
+.it2 {
+  height: 100%;
+  background:#e6aeeb;
+  /* flex-basis: 100px; */
+  height: 100%;
+  width: 50%;
+}
+
+.outer-div h1 {
+  font-size: 2rem;
+  margin-bottom: 10%;
+}
+
+.outer-div div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-table {
+  font-size: 22px;
+}
+
+.table-label {
+  width: 160px;
+}
+
+.btn-div {
+  margin-top: 7%;
+}
+
+.user-input {
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #01081f;
+  font-size: 16px;
+  color: white;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-1 {
+  transition: all 90ms ease;
+}
+
+.btn-1:hover {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donateAtMe</title>
+    <link rel="stylesheet" href="/stylesheets/pendingrequest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
+    <style>
+        .ngo-image {
+            background-image: url('<%= rngo.imageurl %>');
+            background-size: cover;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav">
+            <div class="info">
+                <div class="ngo-image">
+                </div>
+                <div>
+                    <p class="ngo-name">
+                        <font size="6em">Welcome,</font>
+                    </p>
+                    <p class="ngo-name" style="margin-left: 19px">
+                        <%= rngo.name %>
+                    </p>
+                </div>
+            </div>
+            <div class="handle">
+                <div class="link">
+                    <div>
+                        <form action="/ngo/raiserequest" method="get">
+                            <button class="dashboard-route">Raise Requests</button>
+                            <br><br>
+                            <button formaction="/ngo/pendingrequest" class="dashboard-route">Pending Requests</button>
+                            <br><br>
+                            <button formaction="/ngo/changedetails" class="dashboard-route">Update Details</button>
+                        </form>
+                    </div>
+                    <div class="logout-div">
+                        <form action="/logout" method="post">
+                            <button  id="log" class="dashboard-route">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-info">
+                These are your Pending Requests
+            </div>
+            <div class="main-subinfo">
+                Filter by :
+            </div>
+            <div class="click-image-outer">
+                <form class="img-div" method="get" action='/ngo/pendingrequest/books'>
+                    <button type="submit">
+                        <div class="click-image" id="book-image">
+                            <div class="showing" id="book-text">
+                                Books
+                            </div>
+                        </div>
+                    </button>
+                </form>
+                <form class="img-div" method="get" action='/ngo/pendingrequest/apparel'>
+                    <button type="submit">
+                        <div class="click-image" id="clothes-image">
+                            <div class="showing" id="clothes-text">
+                                Apparel and Toileteries
+                            </div>
+                        </div>
+                    </button>
+                </form>
+                <form class="img-div" method="get" action='/ngo/pendingrequest/sponsorship'>
+                    <button type="submit">
+                        <div class="click-image" id="sponsor-image">
+                            <div class="showing" id="sponsor-text">
+                                Sponsors
+                            </div>
+                        </div>
+                    </button>
+                </form>
+                <form class="img-div" method="get" action='/ngo/pendingrequest/food'>
+                    <button type="submit">
+                        <div class="click-image" id="food-image">
+                            <div class="showing" id="food-text">
+                                Food
+                            </div>
+                        </div>
+                    </button>
+                </form>
+                <form class="img-div" method="get" action='/ngo/pendingrequest'>
+                    <button type="submit">
+                        <div class="click-image" id="all-image">
+                            <div class="showing" id="food-text">
+                                All
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+            <% for( i of rngo.ngoreq ) { %>
+
+
+                <div class="all-accordion">
+                    <div class="full-accordion">
+                        <button class="accordion">
+                            <h1>Request was made For: <%= i.category %>, <%= i.subcategory %>
+                            </h1><br>
+                            <div class="display-table-div">
+                                <table class="display-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Quantity </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= i.item[0] %>
+                                            </td>
+                                            <td>
+                                                <%= i.quantity[0] %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <%= i.item[1] %>
+                                            </td>
+                                            <td>
+                                                <%= i.quantity[1] %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <%= i.item[2] %>
+                                            </td>
+                                            <td>
+                                                <%= i.quantity[2] %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <%= i.item[3] %>
+                                            </td>
+                                            <td>
+                                                <%= i.quantity[3] %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <%= i.item[4] %>
+                                            </td>
+                                            <td>
+                                                <%= i.quantity[4] %>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </button>
+
+                        <div class="panel">
+                            <div class="delete-button">
+                                <form action="/ngo/delete/req/<%= i._id %>" method="post">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </div>
+                            <% for( let j of i.donors ) { %>
+
+                                <div class="donor">
+                                    <div class="left">
+                                        <h2>Name of the Donor: <%= j.name %>
+                                        </h2>
+                                        <h2>Number: <%= j.num %>
+                                        </h2>
+                                        <h2>Email: <%= j.email %>
+                                        </h2>
+                                    </div>
+
+                                    <div class="right">
+                                        <table class="donor-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Quantity</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <%= i.item[0] %>
+                                                    </td>
+                                                    <td>
+                                                        <%= j.quantity[0] %>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <%= i.item[1] %>
+                                                    </td>
+                                                    <td>
+                                                        <%= j.quantity[1] %>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <%= i.item[2] %>
+                                                    </td>
+                                                    <td>
+                                                        <%= j.quantity[2] %>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <%= i.item[3] %>
+                                                    </td>
+                                                    <td>
+                                                        <%= j.quantity[3] %>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <%= i.item[4] %>
+                                                    </td>
+                                                    <td>
+                                                        <%= j.quantity[4] %>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <script src="/javascripts/pendingrequest.js">
+    </script>
+</body>
+
+</html>

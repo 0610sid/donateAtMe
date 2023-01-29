@@ -1,0 +1,112 @@
+<%- include('./partials/bootstrap.ejs') %>
+    <title>donateAtMe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="/stylesheets/donate.css" rel="stylesheet">
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+        type="text/css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    </head>
+
+    <body>
+        <%- include('./partials/navbar.ejs') %>
+            <div class="container1">
+                <div class="box">
+                    <div class="bahar">
+                        <div class="left">
+                            <form action="/search" method="get" class="form-all">
+                                <table class="form-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label>ENTER YOUR PINCODE</label>
+                                            </td>
+                                            <td><input type="number" placeholder="" class="pin-input" name="pincode"
+                                                    id="pincode"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><button class="cbtn" id="search">SEARCH</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label id="area-label">AREA SELECTED</label></td>
+                                            <td>
+                                                <p id="areaselect"></p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><button class="cbtn hidden" formaction="/confirmpin"
+                                                    method="post" id="confirmbtn">CONFIRM</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+                integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+                crossorigin="anonymous"></script>
+            <script>
+                mapboxgl.accessToken = '<%- process.env.MAPBOX_TOKEN %>';
+                const map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [72.87750, 19.07583],
+                    zoom: 10,
+                })
+
+                const marker1 = new mapboxgl.Marker({ color: 'black' })
+                    .setLngLat([72.87750, 19.07583])
+                    .addTo(map);
+
+
+                const btn = document.getElementById('search').addEventListener('click', async (e) => {
+                    marker1.remove();
+                    e.preventDefault();
+                    const pincode = document.getElementById('pincode').value
+                    const areaselect = document.getElementById('areaselect')
+                    await axios.get(`/search?pincode=${pincode}`)
+                        .then(res => {
+                            map.flyTo({
+                                zoom: 12,
+                                center: res.data[0],
+                                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                            })
+
+                            const marker = new mapboxgl.Marker({ color: 'black' })
+                                .setLngLat(res.data[0])
+                                .addTo(map);
+
+                            const area = document.getElementById('areaselect')
+                            area.innerHTML = res.data[1]
+                            area.style.color = "black";
+                            area.style.fontSize = "40px"
+                            const confirmbtn = document.getElementById('confirmbtn')
+                            confirmbtn.classList.remove('hidden')
+                        })
+                        .catch(e => {
+                            const confirmbtn = document.getElementById('confirmbtn')
+                            confirmbtn.classList.add('hidden')
+                            const area = document.getElementById('areaselect')
+                            area.innerHTML = "We currently dont serve on the requested pincode. Try with another pincode";
+                            area.style.color = "red"
+                            area.style.fontSize = "20px"
+                        })
+                })
+            </script>
+
+    </body>
+
+    </html>

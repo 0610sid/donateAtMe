@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+html,body {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #fcd8ff, #e6aeeb);
+} 
+
+.main{
+    display: flex;
+    font-family: 'poppins';
+}
+
+.sidenav{
+    color: white;
+    inset: 0;
+    position: fixed;
+    background-color: #01081f;
+    width: 20em;
+    height: 100vh;
+}
+
+.info{
+    display: flex;
+    margin-left: 5%;
+    margin-top: 12%;
+}
+
+.ngo-image{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.ngo-name{
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.handle{
+    margin-top: 40%;
+    margin-left: 9%;
+}
+
+.dashboard-route{
+    border: none;
+    background-color: transparent;
+    margin-top: 20px;
+    font-size: 26px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.dashboard-route:hover {
+    color: #552B7A;
+}
+
+.logout-div{
+    margin-top: 20%;
+}
+
+.link{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    width: 100%;
+    padding-top: 60px;
+    padding-left: 50px;
+    inset: 0;
+    margin-left: 16em;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.input-form input{
+    margin: 2rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    color:darkslategrey;
+}
+
+.submit-div button{
+    border: none;
+    color: aliceblue;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #552B7A;
+}
+
+.submit-div{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}

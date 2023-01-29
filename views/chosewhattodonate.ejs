@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donateAtMe</title>
+    <link href="/stylesheets/chosewhattodonate.css" rel="stylesheet">
+    <link href="/stylesheets/navbar.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <div>
+        <h1 class="upar">What would you like to donate ?</h1>
+    </div>
+    
+    <div class="box">
+        <div class="imgdiv">
+            <div class="blackdiv" id="bookdiv">
+                <h1 id="booktext">B O O K S</h1>
+                <div class="hidden" id="books">
+                    <button class="btn">Academic</button>
+                    <button class="btn">Non-Academic</button>
+                </div>
+            </div>
+            <img src="/images/books.jpeg" width="100%" height="100%" class="img">
+        </div>
+        <div class="imgdiv">
+            <div class="blackdiv" id="sponsordiv">
+                <h1 id="spontext">S P O N S O R S</h1>
+                <div class="hidden" id="sponsor">
+                    <button class="btn">Medical Bills</button>
+                    <button class="btn">Education</button>
+                    <button class="btn">Household appliances</button>
+                    <button class="btn">Recreation for NGO</button>
+                </div>
+            </div>
+            <img src="/images/sponsorship.jpeg" width="100%" height="100%" class="img">
+        </div>
+        <div class="imgdiv">
+            <div class="blackdiv" id="fooddiv">
+                <h1 id="foodtext">F O O D</h1>
+                <div class="hidden" id="food">
+                    <button class="btn">Fooditems</button>
+                </div>
+            </div>
+            <img src="/images/food.png" width="100%" height="100%" class="img">
+        </div>
+        <div class="imgdiv">
+            <div class="blackdiv" id="appdiv">
+                <h1 id="apptext">A P P A R E L</h1>
+                <div class="hidden" id="app">
+                    <button class="btn">Clothes</button>
+                    <button class="btn">Toileteries</button>
+                    <button class="btn">Sports Gear</button>
+                </div>
+            </div>
+            <img src="/images/clothes.jpeg" width="100%" height="100%" class="img">
+        </div>
+    </div>
+
+    <div id="formdiv" class="hidden">
+        <form action="/storeinsession" method="post" class="form">
+            <label class="input-label">
+                <h3>Category</h4>
+            </label><input type="text" name="cat" id="cat" placeholder="category">
+            <label class="input-label">
+                <h3>Sub-Category</h4>
+            </label><input type="text" name="subcat" id="subcat" placeholder="sub-category">
+            <button>Submit</button>
+        </form>
+    </div>
+    <script src="/javascripts/requestpg.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+
+</html>

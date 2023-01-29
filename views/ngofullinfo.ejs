@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <title>donateAtMe</title>
+    <link href="/stylesheets/ngofullinfo.css" rel="stylesheet">
+    <link href="/stylesheets/navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+        <div class="outer">
+            <div id="container1">
+                <div class="product-details">
+                    <h1><%= rreq.ngo.name %></h1><br><br>
+                    <div class="det">
+                        <div class="input-form">
+                            <label for="phone-input">Phone Number:</label> <%= rreq.ngo.num %> 
+                        </div>
+                        <div class="input-form">
+                            <label for="pincode">Pincode:</label> <%= rreq.ngo.pincode %>
+                        </div>
+                        <div class="input-form">
+                            <label for="address">Address:</label> <%= rreq.ngo.address %>
+                        </div>
+                        <div class="input-form">
+                            <label for="housing">Housing:</label> <%= rreq.ngo.housing %>
+                        </div>
+                        <div class="input-form">
+                            <label for="housing">Email:</label> <%= rreq.ngo.email %>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <img src="<%= rreq.ngo.imageurl %>" alt="">
+                </div>
+            </div>
+            <form action="/send/donordetails" method="post">
+                <div class="form">
+                    <div class="inp">
+                        <%- include('./partials/flash.ejs') %>
+                        <div class="form-div">
+                            <div>Please Enter your Credentials</div>
+                            <div>
+                                <label for="name" class="form-label">Name:</label><input type="text" class="form-input"
+                                placeholder="Name" name="name">
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">Email:</label><input type="text" class="form-input"
+                                placeholder="Email" name="email">
+                            </div>
+                            <div>
+                                <label for="phone" class="form-label">Number:</label><input type="number" class="form-input"
+                                placeholder="Phone Number" name="number">
+                            </div>
+                            <button class="donate-btn">Donate</button>
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="fl-table">
+                            <thead>
+                                <tr>
+                                    <th>Sr No.</th>
+                                    <th>Item Name</th>
+                                    <th>Required</th>
+                                    <th>How much do you wish to Donate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% let k=0 %> 
+                                <% for( let j = 0; j < rreq.item.length; j++ ) { %>
+                                    <% if (rreq.item[j]) { %>
+                                        <tr>
+                                            <td><%= k+1 %> </td>
+                                            <td><%= rreq.item[j] %> </td>
+                                            <td><%= rreq.quantity[j] %> </td>
+                                            <td><input class="form-input" type="text" placeholder="Quantity" name="quant<%= j+1 %>"></td>
+                                        </tr>
+                                        <% k++ %> 
+                                    <% } %>
+                                <% } %> 
+                            <tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+</body>
+
+</html>

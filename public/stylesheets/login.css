@@ -1,0 +1,113 @@
+html,
+body {
+  margin: 0;
+}
+
+body {
+  max-height: 100vh;
+  height:100vh;
+  font-family: "poppins";
+  color: aliceblue;
+  background-color: transparent;
+}
+
+.contain {
+  display: flex;
+  height: 100%;
+}
+
+.item1 {
+  background: #9a829b ;
+  height: 100%;
+  width: 50%;
+}
+
+.item2 {
+  height: 100%;
+  background:#e6aeeb;
+  width: 50%;
+}
+
+.main {
+  position: absolute;
+  background-color: #01081f;;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 420px;
+  margin-top: 7%;
+  border-radius: 60px;
+  box-shadow: 4px 4px 12px 2px rgb(0, 0, 0);
+}
+
+#logintxt {
+  width: 100%;
+}
+
+#rightdiv {
+  padding: 30px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 60px;
+  margin: 30px;
+  color: rgb(117, 113, 113);
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.f-name{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 2%;
+}
+
+.f-control {
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: #01081f;
+  font-size: 18px;
+  color: white;
+  width: 300px;
+}
+
+.userinput {
+  margin-top: 10%;
+}
+
+.passinput {
+  margin-top: 7%;
+  color:#fff ;
+}
+
+#signform {
+  display: inline;
+  margin-left: 60px;
+}
+
+.button {
+   margin-top: 50px;
+  color: #fff;
+  padding: 10px 18px;
+  border: 1px solid rgb(255, 255, 255);
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-left: 5%;
+  font-size: 20px;
+}
+.button:hover{
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+  7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+}
+#flash {
+  padding-top: 12%;
+}
