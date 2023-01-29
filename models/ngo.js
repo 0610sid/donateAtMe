@@ -7,7 +7,6 @@ const ngoSchema = new Schema({
     name : {
         type : String,
         minLength : [4, 'Name should be of atleast 4 letters'],
-        maxLength : 20,
         required : true
     },
     pincode : {
