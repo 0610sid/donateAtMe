@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donateAtMe</title>
+    <link href="/stylesheets/signup.css" rel="stylesheet">
+    <link href="/stylesheets/navbar.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('./partials/navbar'); %>
+    <div class="contain">
+    <div class="it1">
+    </div>
+    <div class="it2">
+    </div>
+    <div class="main">
+        <div class="outer-div">
+            <div class="inner-div">
+                <div>
+                    <h1 class="signup-text">Signup</h1>
+                    <form method="post" action="/createacc" autocomplete="off">
+                        <table class="form-table">
+                            <tbody>
+                                <td class="table-label"><label for="name" class="form-label">NGO Name</label></td>
+                                <td><input type="text" name="name" placeholder="NGO Name" class="user-input"></td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="email" class="form-label">Email</label></td>
+                                <td><input type="email" name="email" placeholder="Email" class="user-input"></td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="pin" class="form-label">Number</label></td>
+                                <td><input type="number" name="num" placeholder="Number" class="user-input"></td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="loct" class="form-label">Address</label></td>
+                                <td><input type="text" name="loct" placeholder="Location" class="user-input"></td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="hous" class="form-label">Housing</label></td>
+                                <td><input type="text" name="hous" placeholder="For whom NGO is" class="user-input">
+                                </td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="pin" class="form-label">Pincode</label></td>
+                                <td> <input type="number" name="pin" placeholder="Pincode" class="user-input"></td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="uname" class="form-label">Username</label></td>
+                                <td><input type="text" placeholder="Username" class="user-input" name="uname"></td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="password" class="form-label">Password</label></td>
+                                <td><input type="password" name="password" placeholder="Password" class="user-input">
+                                </td>
+                            </tbody>
+                            <tbody>
+                                <td><label for="img" class="form-label">Image URL</label></td>
+                                <td><input type="text" name="imgurl" placeholder="Paste Image URL" class="user-input">
+                                </td>
+                            </tbody>
+                        </table>
+                        <div class="btn-div">
+                            <button class="custom-btn btn-1">
+                                SIGNUP
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donateAtMe</title>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-button">
+            <form action="/logout" method="post">
+                <button class="custom-btn btn-11">
+                    Logout
+                </button>
+            </form>
+            <form action="/admin/set/valid" method="get">
+                <button class="custom-btn btn-11">
+                    Validate
+                </button>
+            </form>
+            <form action="/admin/set/all" method="get">
+                <button class="custom-btn btn-11">
+                    All NGOs
+                </button>
+            </form>
+        </div>
+    </nav>
+    <div class="container-wrap">
+        <section id="leaderboard">
+            <nav class="ladder-nav">
+                <div class="ladder-title">
+                    <h1>All NGOs</h1>
+                </div>
+                <div class="ladder-search">
+                    <input type="text" id="search-leaderboard" class="live-search-box" placeholder="Search NGO" />
+                </div>
+            </nav>
+            <table id="rankings" class="leaderboard-results" width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                        <th>Confirm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(i of data) { %>
+                        <tr>
+                            <td>
+                                <%= i.name %>
+                            </td>
+                            <td>
+                                <%= i.username %>
+                            </td>
+                            <td>
+                                <%= i.email %>
+                            </td>
+                            <td>
+                                <%= i.num %>
+                            </td>
+                            <td>
+                                Deleted
+                            </td>
+                            <td>
+                                <form action="/perdeleted/<%= i._id %>" method="post">
+                                    <button class="submit-button">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        let ngodata = [];
+        axios.get('http://localhost:5030/alldeleted')
+            .then(res => res.data)
+            .then(async function test(data) {
+                ngodata = await [...data];
+                console.log(ngodata);
+            })
+
+        let data = [];
+        const ngofilter = (key) => {
+            let searchdata = [];
+            axios.get('http://localhost:5030/alldeleted')
+                .then(res => res.data)
+                .then(async function test(data) {
+                    ngodata = await [...data];
+                    console.log(ngodata);
+                })
+
+            for (let i of ngodata) {
+                if (i.name.toLowerCase().indexOf(key) !== -1) {
+                    searchdata.push(i)
+                }
+            }
+            return [searchdata, ngodata];
+        }
+
+        const searchbox = document.getElementById('search-leaderboard');
+        searchbox.addEventListener('input', (e) => {
+            let key = e.target.value;
+            console.log(key, typeof (key))
+            if (key && key.trim().length > 0) {
+                key = key.trim().toLowerCase()
+                totaldata = ngofilter(key);
+                let searchdata = totaldata[0]
+                let ngodata = totaldata[1]
+                $("#rankings tbody tr").remove();
+                for (let i of searchdata) {
+                    $("#rankings tbody").append("<tr>" +
+                        `<td>${i.name}</td>` +
+                        `<td>${i.username}` +
+                        `<td>${i.email}</td>` +
+                        `<td>${i.num}</td>` +
+                        '<td> deleted </td>' +
+                        `<td>
+                            <form action="/perdeleted/${i._id}" method="post">
+                                <button class="submit-button">Delete</button>
+                            </form>
+                        </td>` +
+                        '</tr>');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

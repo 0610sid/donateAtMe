@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donateAtMe</title>
+    <link href="/stylesheets/filteredngo.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar'); %>
+
+        <% for( i of filtered ) { %>
+            <div id="container">
+                <div class="product-details">
+                    <h1>
+                        <%= i.ngo.name %>
+                    </h1>
+                    <p>LOCATION</p>
+                    <p class="information">
+                        <%= i.ngo.address %>
+                    </p>
+                    <div class="control">
+                        <form action="/donate/reqdet/<%= i._id %>" method="post">
+                        <button class="btn">
+                            <span class="buy">DONATE</span>
+                        </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <img src="<%= i.ngo.imageurl %> " alt="">
+                    <div class="info">
+                        <h2>Required Items</h2>
+                        <ul>
+                            <% for( let j = 0; j < i.item.length; j++ ) { %>
+                                <% if (i.item[j]) { %>
+                                    <li><strong>
+                                        <%= i.item[j] %>
+                                    </strong></li>
+                                <% } %>
+                            <% } %> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <% } %>
+
+</body>
+
+</html>

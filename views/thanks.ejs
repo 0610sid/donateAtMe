@@ -1,0 +1,26 @@
+<%- include('partials/bootstrap') %>
+    <link href="/stylesheets/thanks.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>donateAtMe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="stylesheets/navbar.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <%- include('./partials/navbar.ejs') %>
+            <div class="container">
+                <div class="box">
+                    <div>
+                        <img src="/images/torn page.png" id="clip" alt="">
+                        <div class="centered">
+                            <%- include('partials/flash.ejs') %>
+                                <b>Thank You for registering with us!!!<br>
+                                    We will verify your details and revert back soon.</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+    </html>

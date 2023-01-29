@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donateAtMe</title>
+    <link rel="stylesheet" href="/stylesheets/changedetails.css">
+    <style>
+        .ngo-image{
+            background-image: url('<%= rngo.imageurl %>');
+            background-size : cover ;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav">
+            <div class="info">
+                <div class="ngo-image"></div>
+                <div>
+                    <p class="ngo-name">
+                        <font size="6em">Welcome,</font>
+                    </p>
+                    <p class="ngo-name" style="margin-left: 19px"><%= rngo.name %> </p>
+                </div>
+            </div>
+            <div class="handle">
+                <div class="link">
+                    <div>
+                        <form action="/ngo/raiserequest" method="get">
+                            <button class="dashboard-route">Raise Requests</button>
+                            <br><br>
+                            <button formaction="/ngo/pendingrequest" class="dashboard-route">Pending Requests</button>
+                            <br><br>
+                            <button formaction="/ngo/changedetails" class="dashboard-route">Update Details</button>
+                        </form>
+                    </div>
+                    <div class="logout-div">
+                        <form action="/logout" method="post">
+                            <button class="dashboard-route">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div>
+                <h1>Update Details:</h1>
+            </div>
+            <div>
+                <form action="/updatedetails" method="post">
+                    <div class="input-form">
+                        <label for="phone-input">Phone Number:</label>
+                        <input type="number" name="phone" id="phone-input">
+                    </div>
+                    <div class="input-form">
+                        <label for="email">Email Address:</label>
+                        <input type="email" name="email" id="email-input">
+                    </div>
+                    <div class="submit-div">
+                        <button type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            
+            const phone = document.getElementById('phone-input')
+            const email = document.getElementById('email-input')
+
+            phone.value = '<%= rngo.num %>'
+            email.value = '<%= rngo.email %>'
+        </script>
+</body>
+
+</html>

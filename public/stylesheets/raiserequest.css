@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+html,body {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #fcd8ff, #e6aeeb);
+} 
+
+.main{
+    display: flex;
+    font-family: 'poppins';
+}
+
+.sidenav{
+    color: white;
+    inset: 0;
+    position: fixed;
+    background-color: #01081f;
+    width: 18em;
+    height: 100vh;
+}
+
+.info{
+    display: flex;
+    margin-left: 5%;
+    margin-top: 12%;
+}
+
+.ngo-image{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.ngo-name{
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.handle{
+    margin-top: 40%;
+    margin-left: 9%;
+}
+
+.dashboard-route{
+    border: none;
+    background-color: transparent;
+    margin-top: 20px;
+    font-size: 26px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.dashboard-route:hover {
+    color: #552b7a;
+  }
+
+#log{
+    border: none;
+    background-color: transparent;
+    margin-top: 20px;
+    font-size: 26px;
+    color: rgb(242, 8, 20);
+    text-decoration: none;
+}
+
+#log:hover {
+    color: #5f5e5e;
+}
+
+.logout-div{
+    margin-top: 20%;
+}
+
+.link{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    width: 100%;
+    padding-top: 60px;
+    padding-left: 50px;
+    inset: 0;
+    margin-left: 16em;
+}
+
+.main-info{
+    margin-left: 130px;
+    font-size: 32px;
+}
+
+.click-image-outer{
+    margin-left: 0;
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.click-image{
+    /* filter:brightness(60%); */
+    color: azure;
+    font-size: 2.2rem;
+    height: 150px;
+    width: 230px;
+    box-shadow: black;
+    border-radius: 15px;
+    box-shadow: #01081f 4px 4px 12px;
+    display: flex;
+    margin-top: 10%;
+}
+
+.click-image:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 80ms;
+    transform: translate(5px, 5px);
+    box-shadow: #01081f 1px 1px 8px
+}
+
+#book-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url("/images/books.jpeg");
+    /* background-image: url('books.jpeg'); */
+    background-size: contain;
+}
+
+#clothes-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/images/clothes.jpeg');
+    background-size: contain;
+}
+
+#sponsor-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/images/sponsorship.jpeg');
+    background-size: contain;
+}
+
+#food-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/images/food.png');
+    background-size: contain;
+}
+
+.img-div button {
+    border: none;
+    background-color: transparent;
+}
+/* image ke bahar ka */
+.img-buttons{
+    background-color:transparent;
+    border-color: transparent;
+}
+
+.cat-subcat{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cat-subcat input{
+    margin-left: 12px;
+    width: 20rem;
+    height: 2rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 24px;
+}
+
+.req-form{
+    margin-top: 70px;
+}
+
+.item-form input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    color:darkslategrey;
+}
+
+.item{
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+.item-form{
+    display: flex;
+    justify-content: center;
+}
+
+.submit{
+    border: none;
+    color: aliceblue;
+    width: 140px;
+    height: 50px;
+    font-size:24px;
+    background-color: #552B7A;
+}
+
+.submit:hover{
+    transition: 80ms;
+    transform: translate(3px, 3px);
+    background-color: #e6aeeb;
+    color: #01081f;
+}
+
+.item-form div:nth-of-type(2){
+    margin-left: 10%;
+}
+
+.req-form{
+    background-color: azure;
+    margin-right: 4%;
+    margin-left: 4%;
+    padding: 25px;
+    border-radius: 30px;
+}
+
+.txt{
+  width: 100%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.hidden{
+    display: none;
+}
+
+#subcategory{
+    background-color: azure;
+    text-align: center;
+    width: 15rem;
+    height: 2rem;
+    font-size: 24px;
+    color:darkslategrey;
+}
+
+.submit-div{
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

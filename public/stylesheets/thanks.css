@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+body{
+    background-color: black;
+    margin:0;
+}
+
+button{
+    padding: 8px 8px 8px 8px;
+    margin:8px 5px 5px 5px;
+    background-color:  #22A39F; 
+    font-size: 15px;
+    border-color:  #22A39F;
+}
+
+.container{
+    background: black;
+    display: flex;
+    color:black;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#logo{
+    height:70px;
+    width:70px;
+    margin: 3px 0px 0px 5px;
+}
+
+#clip{
+    height:515px;
+    width:1010px;
+}
+
+#ty{
+    height:100;
+    width:110px; 
+    float: right;
+    background-color: transparent;
+}
+
+.centered{
+    position: absolute; 
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Bad Script', cursive;
+    font-size: 35px;
+    margin-top: 8%;
+}
+
+.flash{
+    font-family: 'Poppins';
+}
+
+a{
+    text-decoration: none;
+}

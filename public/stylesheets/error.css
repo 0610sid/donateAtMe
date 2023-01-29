@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+body, html{
+    min-height: 100vh;
+    font-family: 'Poppins';
+    margin: 0;
+    background-color: #fcd8ff;
+}
+
+.content{
+    color: rgb(218, 22, 22);
+    text-align: center;
+    padding: 100px;
+    margin-top: 100px;
+}
+

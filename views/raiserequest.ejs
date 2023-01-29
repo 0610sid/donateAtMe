@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donateAtMe</title>
+    <link rel="stylesheet" href="/stylesheets/raiserequest.css">
+    <style>
+        .ngo-image{
+            background-image: url('<%= rngo.imageurl %>');
+            background-size : cover ;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav">
+            <div class="info">
+                <div class="ngo-image">
+                </div>
+                <div>
+                    <p class="ngo-name">
+                        <font size="6em">Welcome,</font>
+                    </p>
+                    <p class="ngo-name" style="margin-left: 19px">
+                        <%= rngo.name %>
+                    </p>
+                </div>
+            </div>
+            <div class="handle">
+                <div class="link">
+                    <div>
+                        <form action="/ngo/raiserequest" method="get">
+                            <button class="dashboard-route">Raise Requests</button>
+                            <br><br>
+                            <button formaction="/ngo/pendingrequest" class="dashboard-route">Pending Requests</button>
+                            <br><br>
+                            <button formaction="/ngo/changedetails" class="dashboard-route">Update Details</button>
+                        </form>
+                    </div>
+                    <div class="logout-div">
+                        <form action="/logout" method="post">
+                            <button id="log" class="dashboard-route">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-info">
+                Click on the Following Categories to make a Request:
+            </div>
+            <div class="click-image-outer">
+
+                <button class="img-buttons" type="submit">
+                    <div class="click-image" id="book-image">
+                        <div class="txt" id="book-text">
+                            Books
+                        </div>
+                    </div>
+                </button>
+
+                <button class="img-buttons" type="submit">
+                    <div class="click-image" id="clothes-image">
+                        <div class="txt" id="clothes-text">
+                            Apparel and Toiletaries
+                        </div>
+                    </div>
+                </button>
+
+                <button class="img-buttons" type="submit">
+                    <div class="click-image" id="sponsor-image">
+                        <div class="txt" id="sponsor-text">
+                            Sponsorship
+                        </div>
+                    </div>
+                </button>
+
+                <button class="img-buttons" type="submit">
+                    <div class="click-image" id="food-image">
+                        <div class="txt" id="food-text">
+                            Food
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="req-form">
+                <form action="/raiserequest" method="post">
+                    <div class="cat-subcat">
+                        <div>
+                            <label>Category:</label>
+                            <input readonly type="text" placeholder="category" id="category" name="category">
+                        </div>
+                        <div>
+                            <label id="subcategory-label" class="hidden">Subcategory:</label>
+                            <select name="subcategory" id="subcategory" class="hidden">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-form">
+                            <div class="itemdiv">
+                                <label>Item 1 :</label>
+                                <input type="text" name="item1" class="iteminput">
+                            </div>
+                            <div class="quantdiv hidden">
+                                <label>Quantity :</label>
+                                <input type="text" name="quant1" class="quantitem">
+                            </div>
+                        </div>
+                        <div class="item-form">
+                            <div class="itemdiv hidden">
+                                <label>Item 2 :</label>
+                                <input type="text" name="item2" class="iteminput">
+                            </div>
+                            <div class="quantdiv hidden">
+                                <label>Quantity :</label>
+                                <input type="text" name="quant2" class="quantitem">
+                            </div>
+                        </div>
+                        <div class="item-form">
+                            <div class="itemdiv hidden">
+                                <label>Item 3 :</label>
+                                <input type="text" name="item3" class="iteminput">
+                            </div>
+                            <div class="quantdiv hidden">
+                                <label>Quantity :</label>
+                                <input type="text" name="quant3" class="quantitem">
+                            </div>
+                        </div>
+                        <div class="item-form">
+                            <div class="itemdiv hidden">
+                                <label>Item 4 :</label>
+                                <input type="text" name="item4" class="iteminput">
+                            </div>
+                            <div class="quantdiv hidden">
+                                <label>Quantity :</label>
+                                <input type="text" name="quant4" class="quantitem">
+                            </div>
+                        </div>
+                        <div class="item-form">
+                            <div class="itemdiv hidden">
+                                <label>Item 5 :</label>
+                                <input type="text" name="item5" class="iteminput">
+                            </div>
+                            <div class="quantdiv hidden">
+                                <label>Quantity :</label>
+                                <input type="text" name="quant5" class="quantitem">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit-div">
+                        <button type="submit" class="submit hidden" id="reqbtn">
+                            Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/javascripts/raiserequest.js"></script>
+</body>
+
+</html>

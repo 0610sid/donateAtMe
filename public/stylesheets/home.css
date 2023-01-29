@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+#logo {
+  height: 90px;
+  width: 90px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  height: 100px;
+}
+
+#navbar {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  width: 100%;
+  height: 100px;
+  padding-top: 6px;
+}
+
+.custom-btn {
+  margin: 20px;
+  outline: none;
+  color: white;
+  text-align: center;
+  width: 160px;
+  height: 45px;
+  padding: 2px 25px;
+  border: 1px solid white;
+  font-family: "Poppins";
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn-11 {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-11:hover {
+  background: white;
+  color: black;
+}
+
+.btn-11:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: black;
+  animation: shiny-btn1 3s ease-in-out infinite;
+}
+
+.btn-11:active {
+  box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(0, 0, 0, 0.2),
+    inset 4px 4px 6px 0 rgba(255, 255, 255, 0.2);
+}
+
+@-webkit-keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+#navbari {
+  display: flex;
+  justify-content: end;
+}
+
+#bharwala {
+  background-color: transparent;
+  padding-top: 90px;
+  height: 1350px;
+  margin: 0 20px 0 20px;
+}
+
+#xyz {
+  display: flex;
+  height: 700px;
+}
+
+#imgdiv {
+  background-image: url("../images/FINAL.jpg");
+  width: 55%;
+}
+
+/* #tp1 {
+  background-color: #a590a6;
+  width: 10%;
+} */
+
+#wlcmdiv {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #fcd8ff;
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  font-size: 25px;
+  text-align: center;
+  justify-content: center;
+  z-index: 2;
+  margin-bottom: 0;
+}
+
+#imgkeup {
+  background-image: url("../images/logoabt.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 70em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#dbtndiv {
+  display: flex;
+  justify-content: center;
+}
+
+#abtdiv {
+  display: flex;
+  justify-content: center;
+}
+
+#abtusbtn {
+  /* font-family: ; */
+  margin-top: 20px;
+  /* padding: 8px 22px 8px 22px; */
+  font-size: 26px;
+  border-color: #f4d8bd;
+  background-color: black;
+  color: #f4d8bd;
+  height: 70px;
+  width: 210px;
+}
+
+#abtusbtn:hover {
+  background-color: #f4d8bd;
+  color: black;
+  border-color: black;
+}
+
+#imgtxt {
+  justify-content: flex-end;
+  font-family: "Franklin Gothic Sans";
+  font-size: 25px;
+  font-weight: 500;
+  width: 60%;
+  color: #f8ede3;
+  padding-top: 10px;
+  padding-right: 80px;
+}
+
+#bharwala2 {
+  background-image: url("../images/doodle3.jpeg");
+  background-size: contain;
+  height: 1000px;
+  margin: 0 20px 0 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slideshow-container {
+  width: 450px;
+  height: 450px;
+}
+
+.mySlides {
+  display: none;
+  height:100%;
+  width:100%;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#offset {
+  position: absolute;
+  color: white;
+  margin-top: 350px;
+  margin-left: 12.5%;
+  background-color: black;
+  width: 75%;
+  height: 500px;
+  z-index: 1;
+}
+
+#imgoffset {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background-color: black;
+  margin-left: 60%;
+  margin-top: 270px;
+  z-index: 3;
+}
+
+#total {
+  background-color: #a62349;
+  width: 100%;
+}
+
+.wltxt {
+  padding-left: 15px;
+  margin-top: 5%;
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+  font-family: "Poppins";
+}
+
+.dbtn {
+  /* margin-top: 10%; */
+  font-size: 48px;
+  font-weight: 200;
+  font-family: "Covered By Your Grace", cursive;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.dbtn:after {
+  content: "";
+  background-color: #fc3b3b;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 10px;
+  left: 10px;
+  transition: 0.2s;
+  z-index: -1;
+}
+
+.dbtn:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .dbtn {
+    padding: 13px 50px 13px;
+  }
+}
+
+#stxt {
+  font-size: 45px;
+  /* margin-top: 50px; */
+  margin-left: 10%;
+  margin-right: 50%;
+  font-family: "Amatic SC", cursive;
+  padding-bottom: 20px;
+}
+
+#spara {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 40px;
+  padding-right: 550px;
+  font-family: "Times New Roman", serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.welctxt {
+  margin-top: 5%;
+  font-family: "Poppins";
+}
+
+.welctxt1 {
+  font-size: 30px;
+  font-family: "Poppins";
+  margin: 0;
+  font-weight: 50;
+}
+
+.infodiv p {
+  font-family: "Poppins";
+  font-size: 22px;
+}
+
+.img3slideshow{
+  background-image: url('/images/sliding4.jpeg');
+  background-size: cover;
+}
+
+.img2slideshow{
+  background-image: url('/images/sliding2.jpeg');
+  background-size: cover; 
+}
+
+.img1slideshow{
+  background-image: url('/images/sliding1.jpg');
+  background-size: cover; 
+}
