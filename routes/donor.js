@@ -52,7 +52,6 @@ router.get('/donate', async (req, res) => {
 router.get('/search', async (req, res) => {
     
     const query = req.query;
-    console.log(query.pincode)
     const area = await Pin.findOne({ pincode: query.pincode })
     if(area){
         const geodata = await geocoder.forwardGeocode({
@@ -71,7 +70,6 @@ router.get('/search', async (req, res) => {
 
 router.get('/confirmpin', (req, res) => {
     const rpin = req.session.pincode
-    console.log(rpin)
     res.redirect(`/donate/${rpin}/category`)
 })
 
@@ -106,8 +104,11 @@ router.get('/donate/:pin/requests', catchAsync(async (req, res) => {
                 for (let i of data) {
                     const rngo = await Ngo.findById(i.ngo)
                     if (rngo.pincode === j) {
-                        console.log("match")
-                        await i.populate("ngo")
+                        await i.populate({
+                            path : 'ngo',
+                            model : 'Ngo',
+                            select : 'name address imageurl'
+                        })
                         filtered.push(i)
                     }
                 }

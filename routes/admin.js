@@ -87,7 +87,6 @@ router.get('/alldeleted',isLoggedIn,isAdmin, (req,res)=>{
 
 router.post('/setvalid/:id', isLoggedIn, isAdmin, async(req,res) =>{
     const {id} = req.params
-    console.log(id)
     if(req.body.checkbox)
     {
         const rngo = await Ngo.findById(id)
@@ -103,14 +102,12 @@ router.post('/setdeleted/:id', isLoggedIn, isAdmin, async(req,res) =>{
     const rngo = await Ngo.findById(id)
     rngo.deletedreq = !rngo.deletedreq
     await rngo.save()
-    console.log(rngo)
     res.redirect('/admin/set/valid')
 })
 
 router.post('/perdeleted/:id', isLoggedIn, isAdmin, async(req,res) =>{
     const {id} = req.params
     await Ngo.findByIdAndDelete(id)
-    console.log("deleted")
     res.redirect('/admin/set/deleted')
 })
 

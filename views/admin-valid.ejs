@@ -92,21 +92,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         let ngodata = [];
-        axios.get('http://localhost:5030/allnotvalid')
+        axios.get('/allnotvalid')
             .then(res => res.data)
             .then(async function test(data) {
                 ngodata = await [...data];
-                console.log(ngodata);
             })
 
         let data = [];
         const ngofilter = (key) => {
             let searchdata = [];
-            axios.get('http://localhost:5030/allnotvalid')
+            axios.get('/allnotvalid')
                 .then(res => res.data)
                 .then(async function test(data) {
                     ngodata = await [...data];
-                    console.log(ngodata);
                 })
 
             for (let i of ngodata) {
@@ -120,7 +118,6 @@
         const searchbox = document.getElementById('search-leaderboard');
         searchbox.addEventListener('input', (e) => {
             let key = e.target.value;
-            console.log(key, typeof (key))
             if (key && key.trim().length > 0) {
                 key = key.trim().toLowerCase()
                 totaldata = ngofilter(key);

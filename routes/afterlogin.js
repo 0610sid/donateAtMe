@@ -66,7 +66,6 @@ router.get('/ngo/changedetails', isLoggedIn, async(req,res) =>{
 
 router.post('/ngo/delete/req/:reqid' , isLoggedIn , async(req,res) =>{
     const {reqid} = req.params
-    console.log(reqid)
     const fid = req.user._id
     const rngo = await Ngo.findById(fid)
     await rngo.populate("ngoreq")
