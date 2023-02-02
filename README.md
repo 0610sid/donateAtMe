@@ -7,9 +7,8 @@
 </h1>
 
 <div align="center">
-   <strong>DonateAtMe</strong> - It is a  website which connects donors to NGO’s wherein all NGO’s can raise a request at our site, donors can donate or connect with the respective NGO. <br>
+   <strong>DonateAtMe</strong> - It is a website which connects donors to NGO’s wherein all NGO’s can raise a request at our site, donors can donate or connect with the respective NGO. <br>
   CoC Inheritance 2022 || Error._.503 <br> <br>
-  Add any <a href="https://shields.io/">Shields</a> here
 </div>
 <hr>
 
@@ -32,15 +31,14 @@
 
 ## 📝Description
 
-Add your project description here. Your project description should cover how your website/app works. That way you can convey what your project is without the need for anyone to view the code. A more detailed README in your project repository is encouraged, which can include build and use instructions etc.
+This website provides a platform for NGO to raise request and the donors to serach for any NGO and connect with them for donating the listed categories accordingly
 
-1. Include features and their usecases in bullet points
 
 ## 🔗Links
 
 - [GitHub Repository](https://github.com/0610sid/donateAtMe.git)
-- [Demo Video]()
-- [Drive Link to Screenshots of your project]()
+- [Demo Video](https://drive.google.com/drive/folders/1IqpulSIC8NpoQXzjOhLixuJ36BrIqIhs?usp=sharing)
+- [Drive Link to Screenshots of your project](https://drive.google.com/drive/folders/125VWlDmbGhHYMS3P5Sza-3wQbLkaYU9S?usp=sharing)
 - [Hosted Website Link](https://donateatme.up.railway.app/)
 
 
@@ -86,7 +84,21 @@ This site can be monetized in several ways but we need this site to solve a bigg
 
 ## 🛠Project Setup
 
->Include your project setup basics here. Steps for how someone else can setup your project on their machine. Add any relevant details as well.
+>Firstly, you will need to clone the repository using the clone link above using the command in terminal in a dedicated folder: 
+```
+git clone [Link]
+```
+
+>Then, you will need to install all the node modules which are required for running the project on your machine using the command in terminal: 
+```
+npm install
+```
+>After installing the node modules, you will need to setup the .env file which contains your mapbox token. Please refer the following docs on how to [create one]( https://docs.mapbox.com/help/tutorials/get-started-tokens-api/).
+
+>To run the project, run the following command:
+``` 
+npm start 
+```
 
 ## 💻Usage
 
@@ -102,8 +114,6 @@ When any NGO Signs In in our website, they instantly can't access the features. 
 
 ## 👨‍💻Team Members
 
-Add names of your team members with their emails and links to their GitHub accounts
-
 - [Siddhant Baheti](https://github.com/0610sid): bahetisid06@gmail.com
 - [Raunak Singh Kalsi](https://github.com/code-wizard123): rskalsi39@gmail.com   
 - [Srushti Gaidhane](https://github.com/SrushtiGaidhane): srushtig2006@gmail.com
@@ -111,15 +121,10 @@ Add names of your team members with their emails and links to their GitHub accou
 
 ## 👨‍🏫Mentors
 
-Add names of your mentors with their emails and links to their GitHub accounts
-
-- [Abhishek Gupta](https://github.com/): Email 
-- [Bhavik Bharambe](https://github.com/): bhavik.bharambe02@gmail.com
-- [Naman Kothari](https://github.com/): namankothari0512@gmail.com
+- Abhishek Gupta: abhishek.9867.338961@gmail.com
+- Bhavik Bharambe: bhavik.bharambe02@gmail.com
+- Naman Kothari: namankothari0512@gmail.com
 
 ## 📱Screenshots
-Add a few screenshots for parts of the project completed till now to give the viewer a quick idea of what your project looks like. After all, a picture speaks a thousand words.
 
-You'll have to link the screenshots from your drive folder here.
-
-![Screenshot alt text](https://i.redd.it/qp8ocyzvyj8a1.jpg "Here is a screenshot")
+Screenshot Link has been provided above :D
