@@ -121,9 +121,9 @@ When any NGO Signs In in our website, they instantly can't access the features. 
 
 ## 👨‍🏫Mentors
 
-- Abhishek Gupta: abhishek.9867.338961@gmail.com
+- [Abhishek Gupta](https://github.com/Abhishekohm): abhishek.9867.338961@gmail.com
 - Bhavik Bharambe: bhavik.bharambe02@gmail.com
-- Naman Kothari: namankothari0512@gmail.com
+- [Naman Kothari](https://github.com/NamanKothari5): namankothari0512@gmail.com
 
 ## 📱Screenshots
 
