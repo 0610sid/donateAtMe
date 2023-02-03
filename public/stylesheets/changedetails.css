@@ -9,6 +9,10 @@ body {
     background-image: linear-gradient(to bottom right, #fcd8ff, #e6aeeb);
 } 
 
+.flash{
+    height: 75px;
+}
+
 .main{
     display: flex;
     font-family: 'poppins';
@@ -62,6 +66,10 @@ body {
 
 .logout-div{
     margin-top: 20%;
+}
+
+.logout-div button{
+    color: red;
 }
 
 .link{

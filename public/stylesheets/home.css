@@ -8,15 +8,15 @@ body {
 }
 
 #logo {
-  height: 90px;
-  width: 90px;
+  height: 60px;
+  width: 60px;
 }
 
 header {
   width: 100%;
   position: fixed;
   z-index: 10;
-  height: 100px;
+  height: 70px;
 }
 
 #navbar {
@@ -25,7 +25,7 @@ header {
   justify-content: space-between;
   background-color: #000;
   width: 100%;
-  height: 100px;
+  height: 70px;
   padding-top: 6px;
 }
 
@@ -35,7 +35,7 @@ header {
   color: white;
   text-align: center;
   width: 160px;
-  height: 45px;
+  height: 40px;
   padding: 2px 25px;
   border: 1px solid white;
   font-family: "Poppins";
@@ -99,6 +99,7 @@ header {
 #navbari {
   display: flex;
   justify-content: end;
+  align-items: center;
 }
 
 #bharwala {
@@ -191,6 +192,7 @@ header {
   background-size: contain;
   height: 1000px;
   margin: 0 20px 0 20px;
+  display: flex;
 }
 
 * {
@@ -198,8 +200,8 @@ header {
 }
 
 .slideshow-container {
-  width: 450px;
-  height: 450px;
+  width: 25rem;
+  height: 25rem;
 }
 
 .mySlides {
@@ -224,24 +226,27 @@ header {
 }
 
 #offset {
-  position: absolute;
+  padding-right: 50px;
+  align-items: center;
+  display: flex;
   color: white;
-  margin-top: 350px;
+  margin-top: 250px;
   margin-left: 12.5%;
   background-color: black;
   width: 75%;
   height: 500px;
-  z-index: 1;
+}
+
+#total-data{
+  padding: 20px;
+  width: 75%;
+  text-align: center;
 }
 
 #imgoffset {
-  position: absolute;
-  width: 450px;
-  height: 450px;
+  width: 25rem;
+  height: 25rem;
   background-color: black;
-  margin-left: 60%;
-  margin-top: 270px;
-  z-index: 3;
 }
 
 #total {
@@ -299,21 +304,18 @@ header {
 }
 
 #stxt {
-  font-size: 45px;
+  font-size: 38px;
   /* margin-top: 50px; */
   margin-left: 10%;
-  margin-right: 50%;
   font-family: "Amatic SC", cursive;
   padding-bottom: 20px;
 }
 
 #spara {
-  text-align: center;
-  font-size: 25px;
-  margin-top: 10px;
-  margin-left: 40px;
-  padding-right: 550px;
-  font-family: "Times New Roman", serif;
+  font-size: 34px;
+  /* margin-top: 50px; */
+  font-family: "Amatic SC", cursive;
+  padding-bottom: 8px;
 }
 
 .hidden {

@@ -45,6 +45,8 @@
                         <th>Name</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Address</th>
+                        <th>Housing</th>
                         <th>Phone</th>
                         <th>Valid</th>
                         <th>Confirm</th>
@@ -61,6 +63,12 @@
                             </td>
                             <td>
                                 <%= i.email %>
+                            </td>
+                            <td>
+                                <%= i.address %>
+                            </td>
+                            <td>
+                                <%= i.housing %>
                             </td>
                             <td>
                                 <%= i.num %>
@@ -84,6 +92,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
         let data = [];
+        let ngodata = [];
         const ngofilter = (key) => {
             let searchdata = [];
             axios.get('/allngo')
@@ -108,12 +117,33 @@
                 totaldata = ngofilter(key);
                 let searchdata = totaldata[0]
                 let ngodata = totaldata[1]
+                console.log(searchdata)
                 $("#rankings tbody tr").remove();
                 for (let i of searchdata) {
                     $("#rankings tbody").append("<tr>" +
                         `<td>${i.name}</td>` +
                         `<td>${i.username}` +
                         `<td>${i.email}</td>` +
+                        `<td>${i.address}</td>` +
+                        `<td>${i.housing}</td>` +
+                        `<td>${i.num}</td>` +
+                        `<td>${i.valid}</td>` +
+                        `<td><form action="/setvalid2/${i._id}>" method="post">
+                            <button type="submit" class="submit-button">Toggle</button>
+                        </form></td>` +
+                        "</tr>");
+                }
+            }
+            else if(key.trim().length === 0){
+                $("#rankings tbody tr").remove();
+                totaldata = ngofilter(key);
+                for (let i of totaldata[1]) {
+                    $("#rankings tbody").append("<tr>" +
+                        `<td>${i.name}</td>` +
+                        `<td>${i.username}` +
+                        `<td>${i.email}</td>` +
+                        `<td>${i.address}</td>` +
+                        `<td>${i.housing}</td>` +
                         `<td>${i.num}</td>` +
                         `<td>${i.valid}</td>` +
                         `<td><form action="/setvalid2/${i._id}>" method="post">

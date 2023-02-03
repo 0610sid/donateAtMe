@@ -45,6 +45,8 @@
                         <th>Name</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Address</th>
+                        <th>Housing</th>
                         <th>Phone</th>
                         <th>Valid</th>
                         <th>Confirm</th>
@@ -62,6 +64,12 @@
                             </td>
                             <td>
                                 <%= i.email %>
+                            </td>
+                            <td>
+                                <%= i.address %>
+                            </td>
+                            <td>
+                                <%= i.housing %>
                             </td>
                             <td>
                                 <%= i.num %>
@@ -120,15 +128,45 @@
             let key = e.target.value;
             if (key && key.trim().length > 0) {
                 key = key.trim().toLowerCase()
+                $("#rankings tbody tr").remove();
                 totaldata = ngofilter(key);
                 let searchdata = totaldata[0]
                 let ngodata = totaldata[1]
-                $("#rankings tbody tr").remove();
+                console.log(searchdata)
                 for (let i of searchdata) {
                     $("#rankings tbody").append("<tr>" +
                         `<td>${i.name}</td>` +
                         `<td>${i.username}` +
                         `<td>${i.email}</td>` +
+                        `<td>${i.address}` +
+                        `<td>${i.housing}</td>` +
+                        `<td>${i.num}</td>` +
+                        `<td>
+                            <form action="/setvalid/${i._id}" method="post">
+                                <input type="checkbox" id="checkbox" name="checkbox">
+                        </td>
+                        <td>
+                            <button type="submit" class="submit-button">Update</button>
+                            </form>
+                        </td>` +
+                        `<td>
+                            <form action="/setdeleted/${i._id}" method="post">
+                                <button type="submit" class="submit-button">Delete</button>
+                            </form>
+                        </td>` +
+                        "</tr>");
+                }
+            }
+            else if(key.trim().length === 0){
+                $("#rankings tbody tr").remove();
+                totaldata = ngofilter(key);
+                for (let i of totaldata[1]) {
+                    $("#rankings tbody").append("<tr>" +
+                        `<td>${i.name}</td>` +
+                        `<td>${i.username}` +
+                        `<td>${i.email}</td>` +
+                        `<td>${i.address}` +
+                        `<td>${i.housing}</td>` +
                         `<td>${i.num}</td>` +
                         `<td>
                             <form action="/setvalid/${i._id}" method="post">

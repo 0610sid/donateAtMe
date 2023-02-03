@@ -145,6 +145,9 @@ input[type="date"],
 /* Ladder Navigation */
 #leaderboard {
   padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .ladder-nav {
@@ -268,32 +271,24 @@ input[type="date"],
   display: none;
 }
 
-#rankings tbody td:nth-of-type(1){
-  width: 35%;
+.container-wrap{
+  margin-top: 70px;
 }
 
-#rankings tbody td:nth-of-type(2){
-  width: 10%;
+#rankings{
+  border-radius: 0px 0px 10px 10px;
 }
 
-#rankings tbody td:nth-of-type(3){
-  width: 35%;
+.ladder-nav{
+  width: 100%;
 }
 
-#rankings tbody td:nth-of-type(4){
-  width: 10%;
-}
-
-#rankings tbody td:nth-of-type(5){
-  width: 5%;
-}
-
-#rankings tbody td:nth-of-type(6){
-  width: 5%;
+#rankings{
+  width: 100%;
 }
 
 #rankings thead th:nth-of-type(1){
-  width: 35%;
+  width: 15%;
 }
 
 #rankings thead th:nth-of-type(2){
@@ -301,25 +296,61 @@ input[type="date"],
 }
 
 #rankings thead th:nth-of-type(3){
-  width: 35%;
+  width: 15%;
 }
 
 #rankings thead th:nth-of-type(4){
-  width: 10%;
+  width: 20%;
 }
 
 #rankings thead th:nth-of-type(5){
-  width: 5%;
+  width: 10%;
 }
 
 #rankings thead th:nth-of-type(6){
-  width: 5%;
+  width: 10%;
 }
 
-.container-wrap{
-  margin-top: 70px;
+#rankings thead th:nth-of-type(7){
+  width: 10%;
 }
 
-#rankings{
-  border-radius: 0px 0px 10px 10px;
+#rankings thead th:nth-of-type(8){
+  width: 10%;
+}
+
+#rankings tbody td:nth-of-type(1){
+  width: 15%;
+}
+
+#rankings tbody td:nth-of-type(2){
+  width: 10%;
+}
+
+#rankings tbody td:nth-of-type(3){
+  width: 15%;
+}
+
+#rankings tbody td:nth-of-type(4){
+  width: 20%;
+}
+
+#rankings tbody td:nth-of-type(5){
+  width: 10%;
+}
+
+#rankings tbody td:nth-of-type(6){
+  width: 10%;
+}
+
+#rankings tbody td:nth-of-type(7){
+  width: 10%;
+}
+
+#rankings tbody td:nth-of-type(8){
+  width: 10%;
+}
+
+#rankings tbody,thead{
+  text-align: center;
 }

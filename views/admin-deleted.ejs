@@ -45,6 +45,8 @@
                         <th>Name</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Address</th>
+                        <th>Housing</th>
                         <th>Phone</th>
                         <th>Status</th>
                         <th>Confirm</th>
@@ -61,6 +63,12 @@
                             </td>
                             <td>
                                 <%= i.email %>
+                            </td>
+                            <td>
+                                <%= i.address %>
+                            </td>
+                            <td>
+                                <%= i.housing %>
                             </td>
                             <td>
                                 <%= i.num %>
@@ -120,6 +128,28 @@
                         `<td>${i.name}</td>` +
                         `<td>${i.username}` +
                         `<td>${i.email}</td>` +
+                        `<td>${i.address}</td>` +
+                        `<td>${i.housing}</td>` +
+                        `<td>${i.num}</td>` +
+                        '<td> deleted </td>' +
+                        `<td>
+                            <form action="/perdeleted/${i._id}" method="post">
+                                <button class="submit-button">Delete</button>
+                            </form>
+                        </td>` +
+                        '</tr>');
+                }
+            }
+            else if(key.trim().length === 0){
+                $("#rankings tbody tr").remove();
+                totaldata = ngofilter(key);
+                for (let i of totaldata[1]) {
+                    $("#rankings tbody").append("<tr>" +
+                        `<td>${i.name}</td>` +
+                        `<td>${i.username}` +
+                        `<td>${i.email}</td>` +
+                        `<td>${i.address}</td>` +
+                        `<td>${i.housing}</td>` +
                         `<td>${i.num}</td>` +
                         '<td> deleted </td>' +
                         `<td>

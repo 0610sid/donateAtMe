@@ -87,6 +87,7 @@ router.post('/updatedetails', isLoggedIn , async(req,res) =>{
     rngo.num = req.body.phone
     rngo.email = req.body.email
     await rngo.save()
+    req.flash('success', 'Updated Details Successfully!')
     res.redirect('/ngo/changedetails')
 })
 

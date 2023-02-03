@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <%- include('./partials/navbar'); %>
+    <%- include('./partials/navbar.ejs', {login: false}) %>
 
         <% for( i of filtered ) { %>
             <div id="container">

@@ -9,7 +9,7 @@
     <link href="/stylesheets/navbar.css" rel="stylesheet">
 </head>
 <body>
-    <%- include('./partials/navbar.ejs') %>
+    <%- include('./partials/navbar.ejs', {login: false}) %>
     <div class="content">
         <h2><%= err.message %></h2> 
     </div>
